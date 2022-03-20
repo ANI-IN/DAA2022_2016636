@@ -4,3 +4,46 @@ Given a sorted array of positive integers containing few duplicate elements. Des
 using program to find Whether the given key present in the array or not. If present found out no of copies.
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+    printf("Enter the array size : ");
+    int size;
+    scanf("%d",&size);
+
+    int a[size];
+    printf("Enter %d elements : ",size);
+
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    int count=0;
+    printf("Enter key : ");
+    int key,flag=0;
+    scanf("%d",&key);
+
+    for(int i=0;i<size;i++)
+    {
+        if(key==a[i])
+        {
+            flag=1;
+            count++;
+        }
+
+    }
+    if(flag)
+    {
+        printf("Duplicate elements : %d",count);
+    }
+    else
+    {
+        printf("NOT FOUND !!");
+    }
+}
+
