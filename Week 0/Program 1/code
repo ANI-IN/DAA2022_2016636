@@ -3,3 +3,48 @@ Problem Statement :
 Given an array find the max and min element from the array.
 /*
 
+#include <stdio.h>
+#include <stdlib.h>
+
+void sort_array(int a[], int n)
+{
+        int temp;
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = i + 1; j < n; ++j)
+            {
+                if (a[i] > a[j])
+                {
+                    temp =  a[i];
+                    a[i] = a[j];
+                    a[j] = a;
+                }
+            }
+        }
+}
+
+
+int main()
+{
+    printf("Enter the array size : ");
+    int size;
+    scanf("%d",&size);
+
+    int a[size];
+    printf("Enter %d elements ",size);
+
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    sort_array(a,size);
+
+    printf("Minimum number in array is = %d ",a[0]);
+    printf("\nMaximum number in array is = %d ",a[size-1]);
+
+
+
+}
+
+
