@@ -2,3 +2,65 @@
 problem statement :
 Given an array of non-negative integers design and algorithm and run program to count the no of pairs of integer such that there differences is equal to the given key.
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void sort_array(int a[], int n)
+{
+        int temp;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if (a[i] > a[j])
+                {
+                    temp =  a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+}
+
+
+
+int main()
+{
+    printf("Enter the array size : ");
+    int size;
+    scanf("%d",&size);
+
+    int a[size];
+    printf("Enter %d elements : ",size);
+
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("\n");
+
+
+    int key;
+    printf("Enter key : ");
+    scanf("%d",&key);
+        int count=0;
+        for(int i=0;i<size;i++)
+        {
+            for(int j=i+1;j<size;j++)
+            {
+                if( (a[j]-a[i]==key) )
+                {
+                    count++;
+                }
+            }
+        }
+        if(count)
+        {
+            printf("pairs : %d",count);
+        }
+        else
+        {
+            printf("Key Not found");
+        }
+}
