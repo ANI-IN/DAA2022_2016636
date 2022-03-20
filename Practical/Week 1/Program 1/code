@@ -1,0 +1,6 @@
+/* 
+Problem Statement :
+Given a sorted array of positive integers containing few duplicate elements. Design a algorithm and implement it
+using program to find Whether the given key present in the array or not. If present found out no of copies.
+*/
+
